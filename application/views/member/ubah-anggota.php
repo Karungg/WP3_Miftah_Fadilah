@@ -24,7 +24,7 @@
 							<img src="<?= base_url('assets/img/profile/') . $image; ?>" class="img-thumbnail" alt="">
 						</div>
 						<div class="col-sm-9">
-							31<div class="custom-file">
+							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="image" name="image">
 								<label class="custom-file-label" for="image">Pilih file</label>
 							</div>
