@@ -21,6 +21,7 @@ class Home extends CI_Controller
 		} else {
 			$data['user'] = 'Pengunjung';
 			$this->load->view('templates/templates-user/header', $data);
+			$this->load->view('templates/templates-user/modal', $data);
 			$this->load->view('buku/daftarbuku', $data);
 			$this->load->view('templates/templates-user/footer', $data);
 		}
