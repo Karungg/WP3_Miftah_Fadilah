@@ -34,7 +34,7 @@ class Laporan extends CI_Controller
 		// $this->load->library('dompdf_gen');
 		$sroot
 			= $_SERVER['DOCUMENT_ROOT'];
-		include $sroot . "/pustaka-booking/application/third_party/dompdf/autoload.inc.php";
+		include $sroot . "/WP3_Miftah_Fadilah/application/third_party/dompdf/autoload.inc.php";
 		$dompdf = new Dompdf\Dompdf();
 		$this->load->view('buku/laporan_pdf_buku', $data);
 		$paper_size = 'A4'; // ukuran kertas
@@ -62,7 +62,7 @@ class Laporan extends CI_Controller
 	{
 		$data['judul'] = 'Laporan Data Peminjaman';
 		$data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-		$data['laporan'] = $this->db->query("select * from pinjam p,detail_pinjam d,buku b,user u where d.id_buku=b.id and p.id_user=u.idand p.no_pinjam=d.no_pinjam")->result_array();
+		$data['laporan'] = $this->db->query("select * from pinjam p,detail_pinjam d,buku b,user u where d.id_buku=b.id and p.id_user=u.id and p.no_pinjam=d.no_pinjam")->result_array();
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/sidebar');
 		$this->load->view('templates/topbar', $data);
@@ -78,11 +78,11 @@ class Laporan extends CI_Controller
 
 	public function laporan_pinjam_pdf()
 	{
-		$data['laporan'] = $this->db->query("select * from pinjam p,detail_pinjamd,buku b,user u where d.id_buku=b.id and p.id_user=u.idand p.no_pinjam=d.no_pinjam")->result_array();
+		$data['laporan'] = $this->db->query("select * from pinjam p,detail_pinjam d,buku b,user u where d.id_buku=b.id and p.id_user=u.id and p.no_pinjam=d.no_pinjam")->result_array();
 		// $this->load->library('dompdf_gen');
 		$sroot
 			= $_SERVER['DOCUMENT_ROOT'];
-		include $sroot . "/pustaka-booking/application/third_party/dompdf/autoload.inc.php";
+		include $sroot . "/WP3_Miftah_Fadilah/application/third_party/dompdf/autoload.inc.php";
 		$dompdf = new Dompdf\Dompdf();
 		$this->load->view('pinjam/laporan_pdf_pinjam', $data);
 		$paper_size = 'A4'; // ukuran kertas
@@ -100,7 +100,7 @@ class Laporan extends CI_Controller
 	{
 		$data = array(
 			'title' => 'Laporan Data Peminjaman Buku',
-			'laporan' => $this->db->query("select * from pinjam p,detail_pinjam d,buku b,user u where d.id_buku=b.id and p.id_user=u.idand p.no_pinjam=d.no_pinjam")->result_array()
+			'laporan' => $this->db->query("select * from pinjam p,detail_pinjam d,buku b,user u where d.id_buku=b.id and p.id_user=u.id and p.no_pinjam=d.no_pinjam")->result_array()
 		);
 		$this->load->view('pinjam/export-excel-pinjam', $data);
 	}
