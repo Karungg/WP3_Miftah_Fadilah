@@ -26,7 +26,7 @@
 									<td><?= $p['tgl_pinjam']; ?></td>
 									<td><?= $p['id_user']; ?></td>
 									<td><?= $p['id_buku']; ?></td>
-									70<td><?= $p['tgl_kembali']; ?></td>
+									<td><?= $p['tgl_kembali']; ?></td>
 									<td>
 										<?= date('Y-m-d'); ?>
 										<input type="hidden" name="tgl_pengembalian" id="tgl_pengembalian" value="<?= date('Y-m-d'); ?>">

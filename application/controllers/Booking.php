@@ -138,7 +138,7 @@ class Booking extends CI_Controller
 		$data['user'] = $this->session->userdata('nama');
 		$data['judul'] = "Cetak Bukti Booking";
 		$data['useraktif'] = $this->ModelUser->cekData(['id' => $this->session->userdata('id_user')])->result();
-		$data['items'] = $this->db->query("select * from booking as bo, booking_detail as d, buku as bu where d.id_booking=bo.id_booking and d.id_buku=bu.id and bo.id_user='$id_user'")->result_array();
+		$data['items'] = $this->db->query("select*from booking bo, booking_detail d, buku bu where d.id_booking=bo.id_booking and d.id_buku=bu.id and bo.id_user='$id_user'")->result_array();
 		// $this->load->library('dompdf_gen');
 		$sroot
 			= $_SERVER['DOCUMENT_ROOT'];
