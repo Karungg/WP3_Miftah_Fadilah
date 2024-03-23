@@ -40,4 +40,9 @@ class ModelUser extends CI_Model
 		$this->db->where($where);
 		return $this->db->get();
 	}
+
+	public function getUserWithRole()
+	{
+		return $this->db->query("SELECT user.nama, user.email, user.image, user.role_id, user.tanggal_input, role.id, role.role as role_name FROM user JOIN role ON user.role_id=role.id")->result_array();
+	}
 }

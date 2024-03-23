@@ -7,6 +7,7 @@ class Laporan extends CI_Controller
 		parent::__construct();
 	}
 
+	// Laporan buku
 	public function laporan_buku()
 	{
 		$data['judul'] = 'Laporan Data Buku';
@@ -58,6 +59,7 @@ class Laporan extends CI_Controller
 		$this->load->view('buku/export_excel_buku', $data);
 	}
 
+	// Laporan pinjam
 	public function laporan_pinjam()
 	{
 		$data['judul'] = 'Laporan Data Peminjaman';
@@ -103,5 +105,56 @@ class Laporan extends CI_Controller
 			'laporan' => $this->db->query("select * from pinjam p,detail_pinjam d,buku b,user u where d.id_buku=b.id and p.id_user=u.id and p.no_pinjam=d.no_pinjam")->result_array()
 		);
 		$this->load->view('pinjam/export-excel-pinjam', $data);
+	}
+
+	// Laporan anggota
+	public function laporan_anggota()
+	{
+		$data['judul'] = 'Laporan Data Anggota';
+		$data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
+		$data['users'] = $this->ModelUser->getUserWithRole();
+		$this->load->view('templates/header', $data);
+		$this->load->view('templates/sidebar', $data);
+		$this->load->view('templates/topbar', $data);
+		$this->load->view('user/laporan_anggota', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public function cetak_laporan_anggota()
+	{
+		$data['users'] = $this->ModelUser->getUserWithRole();
+
+		$this->load->view('user/laporan_print_anggota', $data);
+	}
+
+	public function laporan_anggota_pdf()
+	{
+		$data['users'] = $this->ModelUser->getUserWithRole();
+		// $this->load->library('dompdf_gen');
+		$sroot
+			= $_SERVER['DOCUMENT_ROOT'];
+		include $sroot . "/WP3_Miftah_Fadilah/application/third_party/dompdf/autoload.inc.php";
+		$dompdf = new Dompdf\Dompdf();
+		$this->load->view('user/laporan_pdf_anggota', $data);
+		$paper_size = 'A4'; // ukuran kertas
+		$orientation = 'landscape'; //tipe format kertas potrait ataulandscape
+		$html = $this->output->get_output();
+		$dompdf->set_paper($paper_size, $orientation);
+		//Convert to PDF
+		$dompdf->load_html($html);
+		$dompdf->set_option('isRemoteEnabled', true);
+		$dompdf->render();
+		$dompdf->stream("laporan_data_anggota.pdf", array('Attachment' =>
+		0));
+		// nama file pdf yang di hasilkan
+	}
+
+	public function export_excel_anggota()
+	{
+		$data = array(
+			'title' => 'Laporan Anggota',
+			'users' => $this->ModelUser->getUserWithRole()
+		);
+		$this->load->view('user/export_excel_anggota', $data);
 	}
 }
