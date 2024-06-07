@@ -32,7 +32,7 @@
 	</li>
 	<li class="nav-item">
 		<a class="nav-link pb-0" href="<?= base_url('user/anggota'); ?>">
-			<i class="fa fa-fw fa-book"></i>
+			<i class="fa fa-fw fa-user"></i>
 			<span>Data Anggota</span></a>
 	</li>
 
