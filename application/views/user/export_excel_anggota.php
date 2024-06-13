@@ -7,7 +7,7 @@ header("Expires: 0");
 ?>
 
 <h3>
-	<center>Laporan Data Buku Perpustakaan Online</center>
+	<center>Laporan Data Anggota Perpustakaan Online</center>
 </h3>
 <br>
 <table class="table-data">
