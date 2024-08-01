@@ -62,7 +62,7 @@
 	<hr class="sidebar-divider mt-3">
 	<!-- Heading -->
 	<div class="sidebar-heading">
-		Transaksi
+		Laporan
 	</div>
 	<!-- Nav Item - Dashboard -->
 	<li class="nav-item active">
