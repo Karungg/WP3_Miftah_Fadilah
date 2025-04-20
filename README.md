@@ -1,5 +1,10 @@
 # Pustaka Booking Web Programming III
 
+## Catatan Penting
+Repository ini saya bagikan sebagai media pembelajaran untuk mahasiswa yang menempuh mata kuliah Web Programming. Silakan gunakan repository ini sebaik mungkin. Yang paling penting adalah **jangan sekadar menyalin kode tanpa memahami isinya.**
+
+Ingat, kode yang baik adalah kode yang bisa Anda pahami dan jelaskan kembali kepada orang lain. Jadikan ini sebagai kesempatan untuk belajar, bukan sekadar menyalin.
+
 ## Deskripsi
 
 Pustaka-booking merupakan aplikasi reservasi atau booking peminjaman buku pada sebuah perpustakaan yang dilakukan secara online dengan melibatkan anggota, admin, dan aplikasi pustaka-booking. Aplikasi pustaka-booking ini dibagi menjadi 2 jenis tampilan yaitu tampilan bagian backend dan tampilan frontend. Untuk pembahasan Web Programming 2 ini hanya membahas tampilan backend saja, sedangkan untuk frontend-nya akan dibahas di mata kuliah Web Programming 3 di semester mendatang.
