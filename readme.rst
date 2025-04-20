@@ -1,71 +1,41 @@
-###################
-What is CodeIgniter
-###################
+# Pustaka Booking Web Programming III
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+## Deskripsi
 
-*******************
-Release Information
-*******************
+Pustaka-booking merupakan aplikasi reservasi atau booking peminjaman buku pada sebuah perpustakaan yang dilakukan secara online dengan melibatkan anggota, admin, dan aplikasi pustaka-booking. Aplikasi pustaka-booking ini dibagi menjadi 2 jenis tampilan yaitu tampilan bagian backend dan tampilan frontend. Untuk pembahasan Web Programming 2 ini hanya membahas tampilan backend saja, sedangkan untuk frontend-nya akan dibahas di mata kuliah Web Programming 3 di semester mendatang.
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+Aplikasi pustaka-booking adalah aplikasi berbasis web yang dibuat untuk booking sebuah buku untuk dipinjam. Tujuan dibuatkannya aplikasi ini agar memudahkan para pengguna dalam mencari buku dan ingin meminjam buku tersebut. Jadi sebelum datang ke perpustakaan dan meminjam sebuah buku, pengguna bisa mencari terlebih dahulu buku yang akan dipinjam, untuk memastikan bahwa di perpustakaan yang akan dia kunjungi benar bahwa buku tersebut tersedia.
 
-**************************
-Changelog and New Features
-**************************
+Alur logika sistem booking pustaka ini yaitu seseorang yang ingin melakukan booking diharuskan mendaftar menjadi anggota terlebih dahulu. Selanjutnya, ketika sudah menjadi anggota, baru dapat melakukan booking terhadap buku yang akan dipinjam. Setelah melakukan booking, anggota diharuskan mengambil buku yang telah dibooking dengan cara datang langsung ke perpustakaan dalam waktu 1x24 jam. Kemudian konfirmasi ke petugas atau admin untuk diambilkan buku yang telah dibooking berdasarkan bukti booking melalui aplikasi.
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+Pustaka-booking secara utuh memiliki kebutuhan sebagai berikut:
 
-*******************
-Server Requirements
-*******************
+Kebutuhan user:
 
-PHP version 5.6 or newer is recommended.
+**1. Admin**
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+- Seorang admin dapat login ke dalam aplikasi pustaka-booking  
+- Seorang admin dapat menambah, melihat, mengubah, dan menghapus data buku pada aplikasi pustaka-booking  
+- Seorang admin dapat melihat data booking dan melanjutkan proses booking sampai buku dipinjam  
+- Seorang admin dapat memproses pengembalian buku yang sudah selesai dipinjam  
 
-************
-Installation
-************
+**2. Pengunjung**  
 
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
+- Pengunjung dapat melihat-lihat data buku yang ada pada aplikasi pustaka-booking  
+- Pengunjung dapat melakukan registrasi untuk menjadi anggota pustaka-booking  
+- Pengunjung dapat memberikan komentar melalui buku tamu  
 
-*******
-License
-*******
+**3. Anggota**  
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+- Anggota dapat login ke dalam sistem aplikasi pustaka-booking  
+- Anggota dapat melakukan booking terhadap buku yang ada pada aplikasi pustaka-booking  
+- Anggota dapat mencetak bukti booking buku untuk dibawa ketika akan mengambil buku yang dibooking  
 
-*********
-Resources
-*********
+**Kebutuhan sistem:**
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+- Sistem akan melakukan validasi username dan password ketika ada seorang user yang melakukan login  
+- Sistem juga melakukan validasi data buku dan anggota yang akan diinput ke dalam database  
+- Sistem akan memblokir dan memberikan notifikasi apabila ada seorang pengunjung yang mengklik tombol booking tanpa melakukan login terlebih dahulu  
+- Sistem akan menghapus secara otomatis data booking yang sudah lewat dari 1x24 jam  
+- Sistem dapat mengkalkulasi denda yang harus dibayarkan ketika ada anggota yang terlambat mengembalikan buku  
+- Sistem dapat menampilkan buku yang dicari oleh user berdasarkan kriteria pencarian  
