@@ -12,27 +12,26 @@ Pustaka-booking secara utuh memiliki kebutuhan sebagai berikut:
 
 Kebutuhan user:
 
-1. Admin
-
-Seorang admin dapat login ke dalam aplikasi pustaka-booking
-Seorang admin dapat menambah, melihat, mengubah, dan menghapus data buku pada aplikasi pustaka-booking
-Seorang admin dapat melihat data booking dan melanjutkan proses booking sampai buku dipinjam
-Seorang admin dapat memproses pengembalian buku yang sudah selesai dipinjam
-2. Pengunjung
-
-Pengunjung dapat melihat-lihat data buku yang ada pada aplikasi pustaka-booking
-Pengunjung dapat melakukan registrasi untuk menjadi anggota pustaka-booking
-Pengunjung dapat memberikan komentar melalui buku tamu
-3. Anggota
-
-Anggota dapat login ke dalam sistem aplikasi pustaka-booking
-Anggota dapat melakukan booking terhadap buku yang ada pada aplikasi pustaka-booking
-Anggota dapat mencetak bukti booking buku untuk dibawa ketika akan mengambil buku yang dibooking
-Kebutuhan sistem:
-
-Sistem akan melakukan validasi username dan password ketika ada seorang user yang melakukan login
-Sistem juga melakukan validasi data buku dan anggota yang akan diinput ke dalam database
-Sistem akan memblokir dan memberikan notifikasi apabila ada seorang pengunjung yang mengklik tombol booking tanpa melakukan login terlebih dahulu
-Sistem akan menghapus secara otomatis data booking yang sudah lewat dari 1x24 jam
-Sistem dapat mengkalkulasi denda yang harus dibayarkan ketika ada anggota yang terlambat mengembalikan buku
-Sistem dapat menampilkan buku yang dicari oleh user berdasarkan kriteria pencarian
+**1. Admin**
+- Seorang admin dapat login ke dalam aplikasi pustaka-booking
+- Seorang admin dapat menambah, melihat, mengubah, dan menghapus data buku pada aplikasi pustaka-booking
+- Seorang admin dapat melihat data booking dan melanjutkan proses booking sampai buku dipinjam
+- Seorang admin dapat memproses pengembalian buku yang sudah selesai dipinjam
+  
+**2. Pengunjung**
+- Pengunjung dapat melihat-lihat data buku yang ada pada aplikasi pustaka-booking
+- Pengunjung dapat melakukan registrasi untuk menjadi anggota pustaka-booking
+- Pengunjung dapat memberikan komentar melalui buku tamu
+  
+**3. Anggota**
+- Anggota dapat login ke dalam sistem aplikasi pustaka-booking
+- Anggota dapat melakukan booking terhadap buku yang ada pada aplikasi pustaka-booking
+- Anggota dapat mencetak bukti booking buku untuk dibawa ketika akan mengambil buku yang dibooking
+  
+**Kebutuhan sistem:**
+- Sistem akan melakukan validasi username dan password ketika ada seorang user yang melakukan login
+- Sistem juga melakukan validasi data buku dan anggota yang akan diinput ke dalam database
+- Sistem akan memblokir dan memberikan notifikasi apabila ada seorang pengunjung yang mengklik tombol booking tanpa melakukan login terlebih dahulu
+- Sistem akan menghapus secara otomatis data booking yang sudah lewat dari 1x24 jam
+- Sistem dapat mengkalkulasi denda yang harus dibayarkan ketika ada anggota yang terlambat mengembalikan buku
+- Sistem dapat menampilkan buku yang dicari oleh user berdasarkan kriteria pencarian
